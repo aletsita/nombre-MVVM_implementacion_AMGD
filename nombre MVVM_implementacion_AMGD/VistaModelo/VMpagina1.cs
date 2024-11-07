@@ -11,6 +11,7 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         string _N1;
         string _N2;
         string _R;
+        string _TipoUsuario;
         string _Mensaje;
         #endregion
 
@@ -22,6 +23,12 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         #endregion
 
         #region OBJETOS
+
+        public string TipoUsuario 
+        {
+            get {return _TipoUsuario;}
+            set { SetValue(ref _TipoUsuario, value); }
+        }
         public string N1 
         {
             get { return _N1; }
