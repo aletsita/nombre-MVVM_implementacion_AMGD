@@ -1,4 +1,5 @@
-﻿using System;
+﻿using nombre_MVVM_implementacion_AMGD.Vista;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace nombre_MVVM_implementacion_AMGD
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Pagina1();
         }
 
         protected override void OnStart()

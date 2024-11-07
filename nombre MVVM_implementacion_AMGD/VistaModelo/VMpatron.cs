@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace nombre_MVVM_implementacion_AMGD.VistaModelo
 {
@@ -27,6 +29,16 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         {
         }
         #endregion
+        #region COMANDOS
+        public ICommand ProcesoAsynccommand => new Command(async () => await ProccesoAsyncrong());
+        public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        #endregion
 
+        #region CONSTRUCTOR
+        public VMpatron(INavigation navigation)
+        {
+            Navigation = navigation;
+        }
+        #endregion
     }
 }
