@@ -50,6 +50,7 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     BackgroundColor="White"
+                    Command="{Binding PNavegarPagina2command}"
                     FontAttributes="Bold"
                     CornerRadius="5"
                     TextColor="Black"></Button>

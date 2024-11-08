@@ -1,11 +1,12 @@
-﻿using System;
+﻿using nombre_MVVM_implementacion_AMGD.Vista;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace nombre_MVVM_implementacion_AMGD.VistaModelo
 {
-    internal class VMpagina1 : BaseViewModel
+    public class VMpagina1 : BaseViewModel
     {
         #region VARIABLES
         string _N1;
@@ -70,6 +71,11 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
             R = r.ToString();
         }
 
+        public async Task NavegarPagina2() 
+        {
+            await Navigation.PushAsync(new Pagina2());
+        }
+
         public async Task Alerta()
         {
             await DisplayAlert("Titulo", Mensaje, "OK");
@@ -84,5 +90,7 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         public ICommand suymarcommand => new Command(Sumar);
         public ICommand Procesoasynccomand => new Command(async () => await Procesoasync());
         #endregion
+        public ICommand PNavegarPagina2command => new Command(async() => await NavegarPagina2());
+        public ICommand Suymarcommand => new Command(Sumar);
     }
 }
