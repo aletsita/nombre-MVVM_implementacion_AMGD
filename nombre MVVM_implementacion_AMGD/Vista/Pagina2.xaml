@@ -19,6 +19,11 @@
                        Padding="10" 
                        Margin="10"
                        BackgroundColor="LightPink">
+                    <Frame.GestureRecognizers>
+                        <!-- Este comando hace referencia a Alertacommand en el contexto de BindingContext del CollectionView -->
+                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, Source={x:Reference listaUser}}"
+                                              CommandParameter="{Binding .}"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <Image Source="{Binding Imagen}" 
                                HeightRequest="100" 

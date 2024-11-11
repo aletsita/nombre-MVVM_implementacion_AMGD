@@ -39,19 +39,19 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
                 new MiUsuario
                 {
                     Nombre = "Alexa",
-                    Imagen = "https://ibb.co/Z2PPzLD"
+                    Imagen = "https://i.ibb.co/rFhSx56/lluvia-de-meteoros.gif"
                 },
 
                 new MiUsuario
                 {
                     Nombre = "Emiliano",
-                    Imagen = "https://ibb.co/Qf9yngP"
+                    Imagen = "https://i.ibb.co/564SptP/noche.gif"
                 },
 
                 new MiUsuario
                 {
                     Nombre = "Nicol",
-                    Imagen = "https://ibb.co/xjTWjZy"
+                    Imagen = "https://i.ibb.co/6HpZ5Pk/arcoiris.gif"
                 }
             };
         }
@@ -59,7 +59,14 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         public async Task Cualquiera()
         { 
         }
+
+        public async Task Alerta(MiUsuario parametros) 
+        {
+            await DisplayAlert("Titulo", parametros.Nombre, "Ok");
+        }
         public ICommand Volvercommand => new Command(async () => await Cualquiera());
+        //Public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        public ICommand Alertacommand => new Command<MiUsuario>(async (p) => await Alerta(p));
         #endregion
 
     }
