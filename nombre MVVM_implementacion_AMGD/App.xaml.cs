@@ -11,7 +11,7 @@ namespace nombre_MVVM_implementacion_AMGD
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Pagina1());
+            MainPage = new NavigationPage(new Menuprincipal());
         }
 
         protected override void OnStart()

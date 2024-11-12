@@ -13,28 +13,28 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
     public class VMPage2 : BaseViewModel
     {
         private string _Texto;
-        public List<MiUsuario> ListaUsuario { get; set; }
+        public List<MiUsuario> listapaginas { get; set; }
 
         #region CONSTRUCTOR
         public VMPage2()
         {
 
-            MostrarUsuarios();
+            MostrarPaginas();
         }
         #endregion
 
         public VMPage2(INavigation navigation) 
         {
             Navigation = navigation;
-            MostrarUsuarios();
+            MostrarPaginas();
         }
 
         #region COMANDOS 
 
 
-        public void MostrarUsuarios()
+        public void MostrarPaginas()
         {
-            ListaUsuario = new List<MiUsuario> {
+            listapaginas = new List<MiUsuario> {
 
                 new MiUsuario
                 {

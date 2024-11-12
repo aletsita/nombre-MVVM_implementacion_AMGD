@@ -1,4 +1,5 @@
-﻿using System;
+﻿using nombre_MVVM_implementacion_AMGD.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace nombre_MVVM_implementacion_AMGD.Vista
         public Menuprincipal()
         {
             InitializeComponent();
+            BindingContext = new VMmenuprincipal(Navigation);
         }
     }
 }
