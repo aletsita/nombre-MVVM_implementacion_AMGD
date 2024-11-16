@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 
 namespace nombre_MVVM_implementacion_AMGD.Vista
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Pagina2 : ContentPage
-    {
-        public Pagina2()
-        {
-            InitializeComponent();
-            BindingContext = new VMPage2(Navigation);
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class Page2 : ContentPage
+	{
+		public Page2 ()
+		{
+			InitializeComponent();
+            BindingContext = new VMPagina2(Navigation);
         }
-    }
+	}
 }

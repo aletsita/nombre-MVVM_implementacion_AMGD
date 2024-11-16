@@ -1,49 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="nombre_MVVM_implementacion_AMGD.Vista.Pagina2"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="nombre_MVVM_implementacion_AMGD.Vista.Page2"
              NavigationPage.HasNavigationBar="False">
 
-    <CollectionView ItemsSource="{Binding listausuarios}" 
-                    VerticalOptions="Center" 
-                    Margin="20,80,20,0"
-                    x:Name="listaUser">
+    <Grid>
+        <!-- Botón de volver -->
+        <Image Source="flechavolver.png"
+               VerticalOptions="Start"
+               HeightRequest="50"
+               HorizontalOptions="Start"
+               Margin="10">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Volvercommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical"
-                             Span="1"
-                             VerticalItemSpacing="20"/>
-        </CollectionView.ItemsLayout>
-
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Frame CornerRadius="15" 
-                       Padding="10" 
-                       Margin="10"
-                       BackgroundColor="LightPink">
-
-                    <Frame.GestureRecognizers>
-                        <!-- Este comando hace referencia a Alertacommand en el contexto de BindingContext del CollectionView -->
-                        <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, Source={x:Reference listaUser}}"
-                                              CommandParameter="{Binding .}"/>
-                    </Frame.GestureRecognizers>
-
-                    <StackLayout>
-                        <Image Source="{Binding Imagen}" 
-                               HeightRequest="100" 
-                               WidthRequest="100" 
-                               Aspect="AspectFill"/>
-
-                        <Label Text="{Binding Nombre}" 
-                               FontSize="20" 
-                               FontAttributes="Bold" 
-                               HorizontalOptions="Center"
-                               TextColor="White"/>
-                    </StackLayout>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-
-    </CollectionView>
-
+        <!-- Lista de usuarios -->
+        <CollectionView ItemsSource="{Binding listausuarios}"
+                        VerticalOptions="FillAndExpand"
+                        Margin="20,80,20,0"
+                        x:Name="listauser">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="1"
+                                 VerticalItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="15"
+                           BackgroundColor="LightPink"
+                           Margin="5">
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="10"
+                                     Spacing="10">
+                            <Image Source="{Binding Imagen}"
+                                   HeightRequest="100"
+                                   WidthRequest="100"/>
+                            <Label Text="{Binding Nombre}"
+                                   VerticalOptions="Center"
+                                   FontSize="20"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, Source={x:Reference listauser}}" 
+                                                  CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

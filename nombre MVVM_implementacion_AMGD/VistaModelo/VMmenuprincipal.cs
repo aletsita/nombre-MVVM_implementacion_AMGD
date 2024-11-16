@@ -9,63 +9,59 @@ using Xamarin.Forms;
 
 namespace nombre_MVVM_implementacion_AMGD.VistaModelo
 {
-    class VMmenuprincipal : BaseViewModel
+    public class VMmenuprincipal : BaseViewModel
     {
         #region VARIABLES
         string _Texto;
-        public List<MmenuPrincipal> listausuarios { get; set; }
+        public List<MenuPrincipal> listapaginas { get; set; }
         #endregion
 
-        #region CONSTRUCTOR 
+        #region CONSTRUCTOR
         public VMmenuprincipal(INavigation navigation)
         {
             Navigation = navigation;
-            Mostrarusuarios();
+            MostrarPaginas();
         }
         #endregion
 
-        #region OBJETOS
-        public void Mostrarusuarios()
+        #region MÉTODOS
+        private void MostrarPaginas()
         {
-            listausuarios = new List<MmenuPrincipal>
+            listapaginas = new List<MenuPrincipal>
             {
-                new MmenuPrincipal
+                new MenuPrincipal
                 {
-                    Pagina = "Entry, datepicker, picker, label, navegacion",
+                    Pagina = "Entry, DatePicker, Picker, Label, Navegación",
                     Icono = "https://i.ibb.co/9ycNzG3/sombrero-de-bruja.png"
                 },
-                new MmenuPrincipal
+                new MenuPrincipal
                 {
                     Pagina = "CollectionView sin enlace a base de datos",
                     Icono = "https://i.ibb.co/n7KzpCS/noche.png"
                 },
-                new MmenuPrincipal
+                new MenuPrincipal
                 {
-                    Pagina = "Crud pokemon",
+                    Pagina = "CRUD Pokémon",
                     Icono = "https://i.ibb.co/RYV5P45/parca.png"
                 }
             };
         }
-        #endregion
 
-        #region PROCESOS
-        public async Task ProcesoAsyncrono()
-        {
-
-        }
-
-        public async Task Navegar(MmenuPrincipal parametros)
+        public async Task Navegar(MenuPrincipal parametros)
         {
             string pagina;
             pagina = parametros.Pagina;
-            if (pagina.Contains("Entry, datapicker"))
+
+            if (pagina.Contains("Entry, datepicker"))
             {
                 await Navigation.PushAsync(new Pagina1());
             }
+
             if (pagina.Contains("CollectionView sin enlace"))
             {
-                await Navigation.PushAsync(new Pagina2());
+                await Navigation.PushAsync(new Page2());
             }
+
             if (pagina.Contains("Crud pokemon"))
             {
                 await Navigation.PushAsync(new Crudpokemon());
@@ -74,9 +70,10 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         #endregion
 
         #region COMANDOS
-        //public ICommand Volvercommand => new Command(async () => await ProcesoAsyncrono());
-        //public Icommand ProcesoSimpcommand => new command (procesoSimple);
-        public ICommand Navegarcommand => new Command<MmenuPrincipal>(async (p) => await Navegar(p));
+        //public ICommand VolverCommand => new Command(async () => await Volver());
+        //public ICommand ProcesoSimpCommand => new Command(ProcesoSimple());
+        public ICommand NavegarCommand => new Command<MenuPrincipal>(async (p) => await Navegar(p));
         #endregion
     }
 }
+

@@ -37,7 +37,7 @@
                     BackgroundColor="LightPink"
                     FontAttributes="Bold"
                     VerticalOptions="Center"
-                    Command="{Binding suymarcommand}"
+                    Command="{Binding Suymarcommand}"
                     TextTransform="None"
                     TextColor="Black" />
 

@@ -28,7 +28,9 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         public string TipoUsuario 
         {
             get {return _TipoUsuario;}
-            set { SetValue(ref _TipoUsuario, value); }
+            set { SetValue(ref _TipoUsuario, value);
+                TipoUsuario = TipoUsuario;
+            }
         }
         public string N1 
         {
@@ -58,7 +60,7 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         #region PROCESOS
         public async Task Navegarpagina2() 
         {
-            await Navigation.PushAsync(new Pagina2());
+            await Navigation.PushAsync(new Page2());
         }
 
         public void Sumar() 
@@ -75,7 +77,7 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
 
         public async Task NavegarPagina2() 
         {
-            await Navigation.PushAsync(new Pagina2());
+            await Navigation.PushAsync(new Page2());
         }
 
         public async Task Alerta()
