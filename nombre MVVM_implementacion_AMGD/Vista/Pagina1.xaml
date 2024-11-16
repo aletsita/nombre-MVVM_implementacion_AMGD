@@ -32,13 +32,13 @@
 
             <!-- Botón para sumar -->
             <Button Text="Sumar"
-                    VerticalOptions="Center"
                     HorizontalOptions="Center"
+                    CornerRadius="5"
+                    BackgroundColor="LightPink"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"
                     Command="{Binding suymarcommand}"
                     TextTransform="None"
-                    BackgroundColor="White"
-                    FontAttributes="Bold"
-                    CornerRadius="5"
                     TextColor="Black" />
 
             <Label Text="{Binding R}"
@@ -48,13 +48,12 @@
                    FontSize="35" />
             
             <Button Text="Ir a pagina 2"
-                    VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    BackgroundColor="White"
-                    Command="{Binding PNavegarPagina2command}"
-                    FontAttributes="Bold"
                     CornerRadius="5"
-                    TextColor="Black"></Button>
+                    BackgroundColor="LightPink"
+                    FontAttributes="Bold"
+                    Command="{Binding PNavegarPagina2command}"></Button>
+                    
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Picker:"
                        TextColor="White"

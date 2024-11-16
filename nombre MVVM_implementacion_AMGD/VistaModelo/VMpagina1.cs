@@ -56,8 +56,10 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
         #endregion
 
         #region PROCESOS
-        public async Task Procesoasync() 
-        { }
+        public async Task Navegarpagina2() 
+        {
+            await Navigation.PushAsync(new Pagina2());
+        }
 
         public void Sumar() 
         {
@@ -88,9 +90,8 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
 
         #region COMANDOS
         public ICommand suymarcommand => new Command(Sumar);
-        public ICommand Procesoasynccomand => new Command(async () => await Procesoasync());
+        //public ICommand Procesoasynccomand => new Command(async () => await Navegarpagina2());
         #endregion
         public ICommand PNavegarPagina2command => new Command(async() => await NavegarPagina2());
-        public ICommand Suymarcommand => new Command(Sumar);
     }
 }

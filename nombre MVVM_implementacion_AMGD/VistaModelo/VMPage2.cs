@@ -39,19 +39,19 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
                 new MiUsuario
                 {
                     Nombre = "Alexa",
-                    Imagen = "https://i.ibb.co/rFhSx56/lluvia-de-meteoros.gif"
+                    Imagen = "https://i.ibb.co/bXcn5tH/calabaza.png"
                 },
 
                 new MiUsuario
                 {
                     Nombre = "Emiliano",
-                    Imagen = "https://i.ibb.co/564SptP/noche.gif"
+                    Imagen = "https://i.ibb.co/RY2RGkm/calcetin.png"
                 },
 
                 new MiUsuario
                 {
                     Nombre = "Nicol",
-                    Imagen = "https://i.ibb.co/6HpZ5Pk/arcoiris.gif"
+                    Imagen = "https://i.ibb.co/jv8FCdr/ciclope.png"
                 }
             };
         }

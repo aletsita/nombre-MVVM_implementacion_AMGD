@@ -32,17 +32,17 @@ namespace nombre_MVVM_implementacion_AMGD.VistaModelo
                 new MmenuPrincipal
                 {
                     Pagina = "Entry, datepicker, picker, label, navegacion",
-                    Icono = "https://i.ibb.co/TBCb5vS/fantasma-personalizado.png"
+                    Icono = "https://i.ibb.co/9ycNzG3/sombrero-de-bruja.png"
                 },
                 new MmenuPrincipal
                 {
                     Pagina = "CollectionView sin enlace a base de datos",
-                    Icono = "https://i.ibb.co/b3B4y4p/monstruo.png"
+                    Icono = "https://i.ibb.co/n7KzpCS/noche.png"
                 },
                 new MmenuPrincipal
                 {
                     Pagina = "Crud pokemon",
-                    Icono = "https://i.ibb.co/Nm9TLxz/frankestein.png"
+                    Icono = "https://i.ibb.co/RYV5P45/parca.png"
                 }
             };
         }

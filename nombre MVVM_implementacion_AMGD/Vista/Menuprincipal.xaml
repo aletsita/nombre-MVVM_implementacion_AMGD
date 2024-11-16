@@ -4,9 +4,9 @@
              x:Class="nombre_MVVM_implementacion_AMGD.Vista.Menuprincipal">
 
     <Grid>
-        <CollectionView ItemsSource="{Binding listarusuarios}"
+        <CollectionView ItemsSource="{Binding listausuarios}"
                         VerticalOptions="Center"
-                        Margin="20,80,20,0"
+                        Margin="20,50,20,0"
                         x:Name="listaruser">
 
             <CollectionView.ItemsLayout>
@@ -20,7 +20,7 @@
                     <Frame CornerRadius="15"
                            BackgroundColor="LightPink">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Navegarcommand, Source={x:Reference listaruser}}"
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Navegarcommand, Source={x:Reference listausuarios}}"
                                                   CommandParameter="{Binding .}" />
                         </Frame.GestureRecognizers>
 
